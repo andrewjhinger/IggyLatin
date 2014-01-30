@@ -1,4 +1,4 @@
-#IggyLatin
+#FormsIO
 
 ###Environment:
 
@@ -6,11 +6,9 @@ Windows form application
 
 ###Concepts used:
 
-Text..
+Creating and Manipulating Strings using StringBuilder and Regular Expressions. Immutability and Empty Versus Null.
 
 ###Functionality:
+Write text in the Textbox and press convert. See the string converted using three different methods and the time reach method took.
 
-Text..
-
-
-![alt tag](https://raw.github.com/andrewjhinger/IggyLatin/master/iggylatinform.JPG)
+![alt tag](https://raw.github.com/andrewjhinger/FormsIO/master/formsioform.JPG)
