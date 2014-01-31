@@ -72,7 +72,7 @@ namespace IggyLatin
                     string character = word.Substring(position, 1);
                     if (character.ToLower().IndexOfAny(_prependList) >= 0)
                     {
-                        // "Vowels"
+                        // Vowels
                         if (position < word.Length - 1)
                             // Prepend
                             convertedWord += _prependText + character;
@@ -179,27 +179,27 @@ namespace IggyLatin
             // Make sure we have something to convert
             if (!string.IsNullOrWhiteSpace(sentence))
             {
-                // Step 1: Prepend all vowels and y with ig not at end of word
+                // Prepend all vowels and y with ig not at end of word
                 string matchPattern = @"[aeiouy](?!\b)";
                 string replacePattern = _prependText + @"$&";
                 sentence = Regex.Replace(sentence, matchPattern, replacePattern, RegexOptions.IgnoreCase);
 
-                // Step 2: Replace all words ending in y with iggy
+                // Replace all words ending in y with iggy
                 matchPattern = @"[y]\b";
                 replacePattern = _appendSpecialText;
                 sentence = Regex.Replace(sentence, matchPattern, replacePattern, RegexOptions.IgnoreCase);
 
-                // Step 3: Replace all words ending in vowel with vowel+ggy
+                // Replace all words ending in vowel with vowel+ggy
                 matchPattern = @"[aeiou]\b";
                 replacePattern = @"$&" + _appendText;
                 sentence = Regex.Replace(sentence, matchPattern, replacePattern, RegexOptions.IgnoreCase);
 
-                // Step 4: Replace all words not ending in vowels or y with iggy
+                // Replace all words not ending in vowels or y with iggy
                 matchPattern = @"[^aeiouy\W]\b";
                 replacePattern = @"$&" + _appendSpecialText;
                 sentence = Regex.Replace(sentence, matchPattern, replacePattern, RegexOptions.IgnoreCase);
 
-                // Step 5: Replace all t with two tt.
+                // Replace all t with two tt.
                 matchPattern = @"[t](?!\b)";
                 replacePattern = @"$&" + _appendttText;
                 sentence = Regex.Replace(sentence, matchPattern, replacePattern, RegexOptions.IgnoreCase);
