@@ -27,7 +27,7 @@ namespace IggyLatin
                 string result = "";
                 long elapsedTicks = 0;
 
-                // Run through stop watch the first time (per Microsoft) to ensure more accurate measurements
+                // Run through stop watch the first time
                 stopWatch.Start();
                 stopWatch.Stop();
                 stopWatch.Reset();
